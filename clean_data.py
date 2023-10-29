@@ -2,6 +2,7 @@
 import json
 import re
 import os
+import glob
 
 # Written by GPT-4
 
@@ -57,4 +58,6 @@ def main(input_folder, output_folder):
             with open(os.path.join(output_folder, filename), 'w') as f:
                 json.dump(chatlog, f, indent=4)
 
+# Remove any existing JSON files in the output folder
+[os.remove(f) for f in glob.glob(os.path.join('cleaned_data', "*.json"))]
 main('formatted_data', 'cleaned_data')
