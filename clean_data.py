@@ -3,6 +3,8 @@ import json
 import re
 import os
 
+# Written by GPT-4
+
 def get_substitute_username(username, username_mapping, substitute_iter):
     """Get a substitute username for a given username, keeping the substitution consistent."""
     if username in username_mapping:
@@ -55,5 +57,4 @@ def main(input_folder, output_folder):
             with open(os.path.join(output_folder, filename), 'w') as f:
                 json.dump(chatlog, f, indent=4)
 
-# Uncomment the line below to run the script
 main('formatted_data', 'cleaned_data')

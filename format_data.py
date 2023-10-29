@@ -2,6 +2,8 @@ import os
 import json
 import glob
 
+# Written by GPT-4
+
 def extract_and_sort_messages(json_file_path):
     # Read the JSON file
     with open(json_file_path, 'r') as f:
@@ -58,6 +60,7 @@ if __name__ == "__main__":
     input_folder_path = "discord_data"
     output_folder_path = "formatted_data"
 
+    # Remove any existing JSON files in the output folder
     [os.remove(f) for f in glob.glob(os.path.join(output_folder_path, "*.json"))]
 
     # Process all JSON files in the folder
