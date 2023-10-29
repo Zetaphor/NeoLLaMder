@@ -1,0 +1,6 @@
+raw_data/*
+!raw_data/PUT_DISCRUB_EXPORT_HERE
+formatted_data/*
+!formatted_data/.gitkeep
+cleaned_data/*
+!cleaned_data/.gitkeep

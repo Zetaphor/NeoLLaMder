@@ -1,0 +1,1 @@
+Populate this file with the Discord usernames of your consenting users, one name per line
