@@ -43,7 +43,7 @@ Push model to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-
 git clone https://github.com/ggerganov/llama.cpp.git
 pip install -r llama.cpp/requirements.txt
 cd llama.cpp
-make CUBLAS=1 # Build llama.cpp binaries
+make CUBLAS=1 -j4 # Build llama.cpp binaries
 mv Neolandtest llama.cpp/models # Move the merged models into the llama.cpp models folder
 # python llama.cpp/convert.py Neolandtest --outfile Neolandtest.gguf --outtype q8_0 # Optional 8-bit quantization
 python3 convert.py ./models/Neolandtest/ # F32 quantization and convert to GGUF
