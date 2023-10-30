@@ -6,3 +6,5 @@ cleaned_data/*
 !cleaned_data/.gitkeep
 user_transcripts/*
 !user_transcripts/.gitkeep
+final_data/*
+!final_data/.gitkeep
