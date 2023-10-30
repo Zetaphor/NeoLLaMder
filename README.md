@@ -23,7 +23,33 @@ The data pipeline scripts were created in their entirety by prompting GPT-4.
 
 ## Training
 
-More to follow as the project progresses.
+This model is being trained and tested with [Axlotl](https://github.com/OpenAccess-AI-Collective/axolotl).
+
+[Runpod Docker Template](https://runpod.io/gsc?template=v2ickqhz9s&ref=6i7fkpdz)
+
+Start the container
+
+Download your dataset and config file inside the container.
+
+Start the fine-tune: `accelerate launch -m axolotl.cli.train qLora.yml`
+
+Login to HuggingFace: `huggingface-cli login`
+
+Push model to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-7B-v0.1 --peft_model=./qlora-out --hub_id=Zetaphor/Neolandtest`
+
+## Quantizing/GGUF
+
+```sh
+git clone https://github.com/ggerganov/llama.cpp.git
+pip install -r llama.cpp/requirements.txt
+cd llama.cpp
+make CUBLAS=1 # Build llama.cpp binaries
+mv Neolandtest llama.cpp/models # Move the merged models into the llama.cpp models folder
+# python llama.cpp/convert.py Neolandtest --outfile Neolandtest.gguf --outtype q8_0 # Optional 8-bit quantization
+python3 convert.py ./models/Neolandtest/ # F32 quantization and convert to GGUF
+./quantize models/Neolandtest.gguf models/quantized_q5_K_M.gguf q5_K_M # 5-bit quantization
+# Modify hf_upload and run again for new file
+```
 
 ## Disclaimer
 
