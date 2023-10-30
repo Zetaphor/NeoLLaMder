@@ -4,3 +4,5 @@ formatted_data/*
 !formatted_data/.gitkeep
 cleaned_data/*
 !cleaned_data/.gitkeep
+user_transcripts/*
+!user_transcripts/.gitkeep
