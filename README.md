@@ -35,7 +35,7 @@ Start the fine-tune: `accelerate launch -m axolotl.cli.train qLora.yml`
 
 Login to HuggingFace: `huggingface-cli login`
 
-Push model to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-7B-v0.1 --peft_model=./qlora-out --hub_id=Zetaphor/Neolandtest`
+Merge the QLoRa into the base model and push to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-7B-v0.1 --peft_model=./qlora-out --hub_id=Zetaphor/Neolandtest`
 
 ## Quantizing/GGUF
 
