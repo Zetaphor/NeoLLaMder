@@ -13,10 +13,11 @@ Preparing the data for the LLM is a three step process:
 
 `allowed_usernames.txt` is the list of usernames to be retained in the training data. `substitute_usernames.txt` is a list of usernames generated with [Mockaroo](https://www.mockaroo.com/) that are used for pseudonymous users. Each pseudonymous user is assigned a username that remains consistent throughout the processing of the formatted discord data. These usernames are also substituted in messages from other users that mention the user.
 
-`format_quotes.py` reformats the `quotes.json` from the `cleaned_data` folder to use the completion format for training. Below is an example of the output format.
+`format_quotes_completion.py` and `format_quotes_alpaca.py` reformats the `quotes.json` from the `cleaned_data` folder to use the completion and Alpaca formats for training. Below is an example of the formats.
 
 ```json
-{"text": "quoted_username: \"Quoted text\""}
+{"text": "quoted_username: \"Completion format example quote\""}
+{"instruction": "Generate a quote from Username", "output": "Alpaca format example quote"}
 ```
 
 The data pipeline scripts were created in their entirety by prompting GPT-4.
