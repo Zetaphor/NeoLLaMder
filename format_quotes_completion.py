@@ -23,7 +23,7 @@ def reformat_quote(quote):
 def main():
     # Load the JSON data from the file
     input_file_path = 'cleaned_data/quotes.json'
-    output_file_path = 'final_data/quotes.jsonl'
+    output_file_path = 'final_data/quotes_completion.jsonl'
 
     with open(input_file_path, 'r') as f:
         quotes_data = json.load(f)
