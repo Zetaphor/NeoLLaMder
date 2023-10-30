@@ -27,15 +27,13 @@ This model is being trained and tested with [Axlotl](https://github.com/OpenAcce
 
 [Runpod Docker Template](https://runpod.io/gsc?template=v2ickqhz9s&ref=6i7fkpdz)
 
-Start the container
+This template was run on an RTX 3090. You'll need to adjust the `gradient_accumulation_steps` and `micro_batch_size` in `qLora.yml` if you're running on a larger or smaller GPU.
 
-Download your dataset and config file inside the container.
-
-Start the fine-tune: `accelerate launch -m axolotl.cli.train qLora.yml`
-
-Login to HuggingFace: `huggingface-cli login`
-
-Merge the QLoRa into the base model and push to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-7B-v0.1 --peft_model=./qlora-out --hub_id=Zetaphor/Neolandtest`
+1. Start the container
+2. Download your dataset and config file inside the container.
+3. Start the fine-tune: `accelerate launch -m axolotl.cli.train qLora.yml`
+4. Login to HuggingFace: `huggingface-cli login`
+5. Merge the QLoRa into the base model and push to HuggingFace: `python merge_peft.py --base_model=mistralai/Mistral-7B-v0.1 --peft_model=./qlora-out --hub_id=Zetaphor/Neolandtest`
 
 ## Quantizing/GGUF
 
