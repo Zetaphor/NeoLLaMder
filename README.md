@@ -7,9 +7,9 @@ Neo**LL**a**M**der is a project to fine-tune an LLM on the content of the Neolan
 Preparing the data for the LLM is a three step process:
 
 1. Export the data with [Discrub](https://chrome.google.com/webstore/detail/discrub/plhdclenpaecffbcefjmpkkbdpkmhhbj) and place the JSON files in the `raw_data` directory
-2. Run `format_data.py` which will remove the unneccesary data and create formatted JSON files in the `formatted_data` directory
-3. Run `clean_data.py` which reformats the usernames according to the allowed usernames list, made up of users who have consented to having their username retained in the training data.
-4. Run `extract_users.py` to separate the messages from individual users into separate JSON files
+2. Run `1_format_data.py` which will remove the unneccesary data and create formatted JSON files in the `formatted_data` directory
+3. Run `2_clean_data.py` which reformats the usernames according to the allowed usernames list, made up of users who have consented to having their username retained in the training data.
+4. Run `3_extract_users.py` to separate the messages from individual users into separate JSON files
 
 `allowed_usernames.txt` is the list of usernames to be retained in the training data. `substitute_usernames.txt` is a list of usernames generated with [Mockaroo](https://www.mockaroo.com/) that are used for pseudonymous users. Each pseudonymous user is assigned a username that remains consistent throughout the processing of the formatted discord data. These usernames are also substituted in messages from other users that mention the user.
 

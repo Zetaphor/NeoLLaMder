@@ -57,7 +57,7 @@ def process_folder(input_folder, output_folder):
 
 if __name__ == "__main__":
     # Define the path to the folder containing the JSON files and the output folder
-    input_folder_path = "discord_data"
+    input_folder_path = "raw_data"
     output_folder_path = "formatted_data"
 
     # Remove any existing JSON files in the output folder
