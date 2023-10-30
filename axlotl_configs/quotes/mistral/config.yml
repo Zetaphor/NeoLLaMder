@@ -8,14 +8,14 @@ load_in_4bit: false
 strict: false
 
 datasets:
-  - path: data.jsonl
+  - path: quotes.jsonl
     ds_type: json
     type: completion
 dataset_prepared_path:
 val_set_size: 0.01
 output_dir: ./out
 
-sequence_len: 8192
+sequence_len: 1024
 sample_packing: true
 pad_to_sequence_len: true
 
@@ -25,8 +25,8 @@ wandb_watch:
 wandb_run_id:
 wandb_log_model:
 
-gradient_accumulation_steps: 4
-micro_batch_size: 2
+gradient_accumulation_steps: 1
+micro_batch_size: 10
 num_epochs: 4
 optimizer: adamw_bnb_8bit
 lr_scheduler: cosine
@@ -46,8 +46,8 @@ logging_steps: 1
 xformers_attention:
 flash_attention: true
 
-warmup_steps: 10
-eval_steps: 0.05
+warmup_steps: 100
+eval_steps: 0.01
 eval_table_size:
 eval_table_max_new_tokens: 128
 save_steps:
